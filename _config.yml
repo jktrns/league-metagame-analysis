@@ -1,0 +1,6 @@
+remote_theme: pages-themes/slate@v0.2.0
+plugins:
+- jekyll-remote-theme
+show_downloads: false
+title: "A Quantification of Metagame Shifts in Professional League of Legends Gameplay"
+description: "Predicting Patch Versions from Team Compositions in 10 Years of Professional Play"
