@@ -137,11 +137,55 @@ Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
 ### Univariate Analysis
 
-Professional League of Legends has a roster of 169 champions (with 168 available in professional play) as of November 2024, but only a subset are considered viable in professional play during any given meta. Although a bivariate analysis is more appropriate to explore meta shifts over time (putting the `major_patch` column into the x-axis), we can still get a sense of the most "reliable" champions by looking at the top 20 most picked champions across the entire dataset. I'll color the bars by role for additional context, although this is a univariate analysis and thus it cannot be used to draw any conclusions:
+LoL has a roster of 169 champions (with 168 available in professional play) as of November 2024, but only a subset are considered viable in professional play during any given meta. Although a bivariate analysis is more appropriate to explore meta shifts over time (putting the `major_patch` column into the x-axis), we can still get a sense of the most "reliable" champions by looking at the top 20 most picked champions across the entire dataset. I'll color the bars by role for additional context, although this is a univariate analysis and thus it cannot be used to draw any conclusions:
 
 <iframe
   src="assets/charts/top-20-champions.html"
-  width="650"
+  width="1200"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The data reveals Nautilus as overwhelmingly the most picked champion of all time in professional play, followed by Ezreal and Braum. Without getting too much into the particulars:
+- Nautilus is a very reliable character that can provide strong engage tools and utility that allow him to set up team fights and engage targets of opportunity, which are highly valuable throughout all meta.
+- Ezreal is a very difficult character with a high skill ceiling, which reaps benefits in professional play.
+
+We can also take a look at the most banned champions across the entire dataset. In professional LoL, each team gets to ban five champions (three in older seasons) before the draft phase begins, with teams alternating bans. Banning serves several strategic purposes:
+
+1. Target bans: Preventing a star player on the enemy team from playing their signature pick, especially if that player is known to "one-trick" that champion (i.e. they are known to play that champion very well)
+2. Meta bans: Eliminating currently overpowered champions that are considered too strong in the current patch to play against. Mostly done by the blue team to immediately deny the red team a key pick
+3. Composition denial: Preventing key champions that would enable certain team compositions or strategies
+4. Comfort picks: Removing champions that your team struggles to play against
+5. Strategic adaptation: Later bans can be used to limit the enemy team's options after seeing their initial picks
+
+The ban phase is crucial as it sets up the draft phase and can force teams to deviate from their preferred strategies. Let's examine the most banned champions:
+
+<iframe
+  src="assets/charts/top-20-bans.html"
+  width="1200"
+  height="600"
+  frameborder="0"
+></iframe>
+
+LeBlanc is, by far and away, the most banned champion of all time. Although these results may not be indicative of the current meta, it seems as if at some point (or consistently), LeBlanc was a non-negotiable ban in professional play.
+
+### Bivariate Analysis
+
+Moving onto bivariate analysis, we can take a look at the distribution of gold earned by each role across the dataset. In League of Legends, there are five primary roles that players assume, each with distinct responsibilities and strategic importance:
+
+| Role    | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Top     | The top laner is positioned in the top lane of the map. This player typically uses "tank" champions (characters that can absorb a lot of damage) or "bruisers" (characters that deal and withstand damage), who can initiate fights. They often play champions that excel in split-pushing (applying pressure on the map by attacking enemy structures while the rest of the team is elsewhere).                        |
+| Jungle  | The jungler does not stay in a fixed lane but instead moves around the map, killing neutral monsters for gold and experience. This role is vital for map control, securing objectives like Dragon and Baron (powerful neutral monsters that provide team-wide benefits when defeated), and assisting other lanes by "ganking" (surprising enemy players in their lanes to help secure kills in outnumbered fights).     |
+| Mid     | The mid laner occupies the central lane and is crucial for controlling the map's center. This role usually involves playing "mages" (characters that use magic to deal damage) or "assassins" (characters that can quickly eliminate opponents), champions that deal significant damage and can roam to other lanes to assist teammates in securing kills.                                                              |
+| Bot     | The bottom lane consists of two players: the ADC (Attack Damage Carry, responsible for dealing consistent physical damage, especially in the late game) and the Support (provides utility, vision, and protection for the ADC). The bot lane is a key area for team coordination and strategy.                                                                                                                          |
+| Support | The Support is part of the bottom lane duo and focuses on protecting the ADC. This role involves providing vision control with wards (items that reveal areas of the map), engaging or disengaging fights, and playing champions with crowd control abilities (skills that impair enemy movement or actions) and healing or shielding capabilities. The Support is essential for team fights and overall map awareness. |
+
+We can start with the gold distribution by role. Gold distribution is a key indicator of team resource allocation strategies. Different roles have different gold requirements based on their function within the team composition, and understanding these patterns helps reveal how teams prioritize their resources:
+
+<iframe
+  src="assets/charts/gold-distribution-by-role.html"
+  width="1200"
   height="600"
   frameborder="0"
 ></iframe>
