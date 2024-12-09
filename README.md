@@ -62,9 +62,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <th>teamname</th>
       <th>playername</th>
       <th>champion</th>
-      <th>kills</th>
-      <th>deaths</th>
-      <th>assists</th>
     </tr>
   </thead>
   <tbody>
@@ -77,9 +74,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>Zika</td>
       <td>Aatrox</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -90,9 +84,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>Weiwei</td>
       <td>Maokai</td>
-      <td>0</td>
-      <td>4</td>
-      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
@@ -103,9 +94,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>Scout</td>
       <td>Orianna</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -116,9 +104,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>GALA</td>
       <td>Kalista</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -129,9 +114,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>Mark</td>
       <td>Senna</td>
-      <td>0</td>
-      <td>3</td>
-      <td>3</td>
     </tr>
     <tr>
       <th>5</th>
@@ -142,9 +124,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>Xiaoxu</td>
       <td>Rumble</td>
-      <td>4</td>
-      <td>0</td>
-      <td>6</td>
     </tr>
     <tr>
       <th>6</th>
@@ -155,9 +134,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>naiyou</td>
       <td>Rell</td>
-      <td>1</td>
-      <td>0</td>
-      <td>12</td>
     </tr>
     <tr>
       <th>7</th>
@@ -168,9 +144,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>VicLa</td>
       <td>LeBlanc</td>
-      <td>4</td>
-      <td>0</td>
-      <td>7</td>
     </tr>
     <tr>
       <th>8</th>
@@ -181,9 +154,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>Assum</td>
       <td>Varus</td>
-      <td>7</td>
-      <td>1</td>
-      <td>5</td>
     </tr>
     <tr>
       <th>9</th>
@@ -194,9 +164,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>Zorah</td>
       <td>Renata Glasc</td>
-      <td>0</td>
-      <td>2</td>
-      <td>13</td>
     </tr>
     <tr>
       <th>10</th>
@@ -207,9 +174,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>LNG Esports</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3</td>
-      <td>16</td>
-      <td>7</td>
     </tr>
     <tr>
       <th>11</th>
@@ -220,9 +184,6 @@ Here are the first 12 rows of the dataset, which represent a single game:
       <td>Rare Atom</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>16</td>
-      <td>3</td>
-      <td>43</td>
     </tr>
   </tbody>
 </table>
