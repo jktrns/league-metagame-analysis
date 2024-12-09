@@ -127,8 +127,6 @@ Here is the `.head()` of the `teams` DataFrame (with 128 columns):
 
 Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
-<div style="max-width: 100vw; width: 100vw; margin-left: calc(-50vw + 50%); display: flex; justify-content: center;">
-
 |     | gameid      | datacompleteness | league | ... | red_assistsat25 | red_deathsat25 | red_picks                                     | red_bans                     |
 | --- | ----------- | ---------------- | ------ | --- | --------------- | -------------- | --------------------------------------------- | ---------------------------- |
 | 0   | TRLH3/33    | complete         | EU LCS | ... | 23.0            | 4.0            | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise]   |
@@ -136,8 +134,6 @@ Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 | 2   | TRLH3/76    | complete         | EU LCS | ... | 4.0             | 4.0            | [Renekton, Vi, Leona, Ziggs, Jinx]            | [Yasuo, Elise, LeBlanc]      |
 | 3   | TRLH3/85    | complete         | EU LCS | ... | 36.0            | 6.0            | [Lucian, Lulu, Shyvana, Olaf, Zyra]           | [Dr. Mundo, Yasuo, Kassadin] |
 | 4   | TRLH3/10072 | complete         | EU LCS | ... | 0.0             | 8.0            | [Annie, Renekton, LeBlanc, Vi, Ezreal]        | [Evelynn, Elise, Dr. Mundo]  |
-
-</div>
 
 ### Univariate Analysis
 
