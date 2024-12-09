@@ -219,9 +219,7 @@ The following operations were performed to clean the data:
 
    To impute these missing values, what we can do is calculate the "presence" of the champion across a particular timeframe surrounding that match (in this case, we will choose the patch number), which is calculated as:
 
-   $$
-   \text{presence} = \frac{\text{number of games where champion was picked/banned}}{\text{number of games that patch was played}}
-   $$
+   ![Presence](assets/images/presence.svg)
 
    For example, here is the presence rate of the top 10 champions in the 14.22 patch:
 
