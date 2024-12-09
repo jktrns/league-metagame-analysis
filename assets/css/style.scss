@@ -37,13 +37,15 @@ code {
 }
 
 body {
-    background-color: #010B13 !important;
+    background: #010B13 !important;
     color: rgb(240, 230, 210);
-    font-family: 14px/1.5 "Spiegel Sans", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Spiegel", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-5Regular_TRIAL.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -51,7 +53,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-5RegularItalic_TRIAL.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
@@ -59,7 +61,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-6SemiBold_TRIAL.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
@@ -67,7 +69,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-6SemiBoldItalic_TRIAL.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
@@ -75,7 +77,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-7Bold_TRIAL.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
@@ -83,7 +85,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-7BoldItalic_TRIAL.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
@@ -91,7 +93,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-8ExtraBold_TRIAL.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
@@ -99,7 +101,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Spiegel Sans';
+    font-family: 'Spiegel';
     src: url('/assets/fonts/SpiegelSans-8ExtraBoldItalic_TRIAL.woff2') format('woff2');
     font-weight: 800;
     font-style: italic;
