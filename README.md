@@ -107,33 +107,33 @@ The following operations were performed to clean the data:
 
 Here is the `.head()` of the `teams` DataFrame (with 146 columns):
 
-|     | gameid   | datacompleteness | league | ... | opp_deathsat25 | major_patch | picks                                         | bans                       |
-| --- | -------- | ---------------- | ------ | --- | -------------- | ----------- | --------------------------------------------- | -------------------------- |
-| 0   | TRLH3/33 | complete         | EU LCS | ... | 10.0           | 03.X        | [Annie, Vi, Jinx, Trundle, Orianna]           | [Riven, Kha'Zix, Yasuo]    |
-| 1   | TRLH3/33 | complete         | EU LCS | ... | 4.0            | 03.X        | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise] |
-| 2   | TRLH3/44 | complete         | EU LCS | ... | 7.0            | 03.X        | [Elise, Lucian, Lulu, Shyvana, Kayle]         | [Lee Sin, Annie, Yasuo]    |
-| 3   | TRLH3/44 | complete         | EU LCS | ... | 6.0            | 03.X        | [Thresh, Renekton, Caitlyn, Gragas, Vi]       | [Kassadin, Kha'Zix, Ziggs] |
-| 4   | TRLH3/76 | complete         | EU LCS | ... | 3.0            | 03.X        | [Thresh, Gragas, Lee Sin, Shyvana, Vayne]     | [Kassadin, Annie, Orianna] |
+|     | gameid   | datacompleteness | league | ... | deathsat25 | major_patch | picks                                         | bans                       |
+| --- | -------- | ---------------- | ------ | --- | ---------- | ----------- | --------------------------------------------- | -------------------------- |
+| 0   | TRLH3/33 | complete         | EU LCS | ... | 10.0       | 03.X        | [Annie, Vi, Jinx, Trundle, Orianna]           | [Riven, Kha'Zix, Yasuo]    |
+| 1   | TRLH3/33 | complete         | EU LCS | ... | 4.0        | 03.X        | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise] |
+| 2   | TRLH3/44 | complete         | EU LCS | ... | 7.0        | 03.X        | [Elise, Lucian, Lulu, Shyvana, Kayle]         | [Lee Sin, Annie, Yasuo]    |
+| 3   | TRLH3/44 | complete         | EU LCS | ... | 6.0        | 03.X        | [Thresh, Renekton, Caitlyn, Gragas, Vi]       | [Kassadin, Kha'Zix, Ziggs] |
+| 4   | TRLH3/76 | complete         | EU LCS | ... | 3.0        | 03.X        | [Thresh, Gragas, Lee Sin, Shyvana, Vayne]     | [Kassadin, Annie, Orianna] |
 
 Here is the `.head()` of the `teams` DataFrame (with 128 columns):
 
-|     | gameid   | datacompleteness | league | ... | opp_killsat25 | opp_assistsat25 | opp_deathsat25 | major_patch |
-| --- | -------- | ---------------- | ------ | --- | ------------- | --------------- | -------------- | ----------- |
-| 0   | TRLH3/33 | complete         | EU LCS | ... | 1.0           | 2.0             | 2.0            | 03.X        |
-| 1   | TRLH3/33 | complete         | EU LCS | ... | 2.0           | 1.0             | 1.0            | 03.X        |
-| 2   | TRLH3/33 | complete         | EU LCS | ... | 1.0           | 2.0             | 0.0            | 03.X        |
-| 3   | TRLH3/33 | complete         | EU LCS | ... | 0.0           | 0.0             | 4.0            | 03.X        |
-| 4   | TRLH3/33 | complete         | EU LCS | ... | 0.0           | 1.0             | 3.0            | 03.X        |
+|     | gameid   | datacompleteness | league | ... | killsat25 | assistsat25 | deathsat25 | major_patch |
+| --- | -------- | ---------------- | ------ | --- | --------- | ----------- | ---------- | ----------- |
+| 0   | TRLH3/33 | complete         | EU LCS | ... | 1.0       | 2.0         | 2.0        | 03.X        |
+| 1   | TRLH3/33 | complete         | EU LCS | ... | 2.0       | 1.0         | 1.0        | 03.X        |
+| 2   | TRLH3/33 | complete         | EU LCS | ... | 1.0       | 2.0         | 0.0        | 03.X        |
+| 3   | TRLH3/33 | complete         | EU LCS | ... | 0.0       | 0.0         | 4.0        | 03.X        |
+| 4   | TRLH3/33 | complete         | EU LCS | ... | 0.0       | 1.0         | 3.0        | 03.X        |
 
 Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
-|     | gameid      | datacompleteness | league | ... | red_opp_assistsat25 | red_opp_deathsat25 | red_picks                                     | red_bans                     |
-| --- | ----------- | ---------------- | ------ | --- | ------------------- | ------------------ | --------------------------------------------- | ---------------------------- |
-| 0   | TRLH3/33    | complete         | EU LCS | ... | 23.0                | 4.0                | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise]   |
-| 1   | TRLH3/44    | complete         | EU LCS | ... | 16.0                | 6.0                | [Thresh, Renekton, Caitlyn, Gragas, Vi]       | [Kassadin, Kha'Zix, Ziggs]   |
-| 2   | TRLH3/76    | complete         | EU LCS | ... | 4.0                 | 4.0                | [Renekton, Vi, Leona, Ziggs, Jinx]            | [Yasuo, Elise, LeBlanc]      |
-| 3   | TRLH3/85    | complete         | EU LCS | ... | 36.0                | 6.0                | [Lucian, Lulu, Shyvana, Olaf, Zyra]           | [Dr. Mundo, Yasuo, Kassadin] |
-| 4   | TRLH3/10072 | complete         | EU LCS | ... | 0.0                 | 8.0                | [Annie, Renekton, LeBlanc, Vi, Ezreal]        | [Evelynn, Elise, Dr. Mundo]  |
+|     | gameid      | datacompleteness | league | ... | red_assistsat25 | red_deathsat25 | red_picks                                     | red_bans                     |
+| --- | ----------- | ---------------- | ------ | --- | --------------- | -------------- | --------------------------------------------- | ---------------------------- |
+| 0   | TRLH3/33    | complete         | EU LCS | ... | 23.0            | 4.0            | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise]   |
+| 1   | TRLH3/44    | complete         | EU LCS | ... | 16.0            | 6.0            | [Thresh, Renekton, Caitlyn, Gragas, Vi]       | [Kassadin, Kha'Zix, Ziggs]   |
+| 2   | TRLH3/76    | complete         | EU LCS | ... | 4.0             | 4.0            | [Renekton, Vi, Leona, Ziggs, Jinx]            | [Yasuo, Elise, LeBlanc]      |
+| 3   | TRLH3/85    | complete         | EU LCS | ... | 36.0            | 6.0            | [Lucian, Lulu, Shyvana, Olaf, Zyra]           | [Dr. Mundo, Yasuo, Kassadin] |
+| 4   | TRLH3/10072 | complete         | EU LCS | ... | 0.0             | 8.0            | [Annie, Renekton, LeBlanc, Vi, Ezreal]        | [Evelynn, Elise, Dr. Mundo]  |
 
 ### Univariate Analysis
 
