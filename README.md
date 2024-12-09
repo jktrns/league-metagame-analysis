@@ -127,6 +127,8 @@ Here is the `.head()` of the `teams` DataFrame (with 128 columns):
 
 Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
+<div style="max-width: 100vw; width: 100vw; margin-left: calc(-50vw + 50%); display: flex; justify-content: center;">
+
 |     | gameid      | datacompleteness | league | ... | red_assistsat25 | red_deathsat25 | red_picks                                     | red_bans                     |
 | --- | ----------- | ---------------- | ------ | --- | --------------- | -------------- | --------------------------------------------- | ---------------------------- |
 | 0   | TRLH3/33    | complete         | EU LCS | ... | 23.0            | 4.0            | [Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo] | [Kassadin, Nidalee, Elise]   |
@@ -135,18 +137,21 @@ Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 | 3   | TRLH3/85    | complete         | EU LCS | ... | 36.0            | 6.0            | [Lucian, Lulu, Shyvana, Olaf, Zyra]           | [Dr. Mundo, Yasuo, Kassadin] |
 | 4   | TRLH3/10072 | complete         | EU LCS | ... | 0.0             | 8.0            | [Annie, Renekton, LeBlanc, Vi, Ezreal]        | [Evelynn, Elise, Dr. Mundo]  |
 
+</div>
+
 ### Univariate Analysis
 
 LoL has a roster of 169 champions (with 168 available in professional play) as of November 2024, but only a subset are considered viable in professional play during any given meta. Although a bivariate analysis is more appropriate to explore meta shifts over time (putting the `major_patch` column into the x-axis), we can still get a sense of the most "reliable" champions by looking at the top 20 most picked champions across the entire dataset. I'll color the bars by role for additional context, although this is a univariate analysis and thus it cannot be used to draw any conclusions:
 
 <iframe
   src="assets/charts/top-20-champions.html"
-  width="1200"
+  width="650"
   height="600"
   frameborder="0"
 ></iframe>
 
 The data reveals Nautilus as overwhelmingly the most picked champion of all time in professional play, followed by Ezreal and Braum. Without getting too much into the particulars:
+
 - Nautilus is a very reliable character that can provide strong engage tools and utility that allow him to set up team fights and engage targets of opportunity, which are highly valuable throughout all meta.
 - Ezreal is a very difficult character with a high skill ceiling, which reaps benefits in professional play.
 
@@ -162,7 +167,7 @@ The ban phase is crucial as it sets up the draft phase and can force teams to de
 
 <iframe
   src="assets/charts/top-20-bans.html"
-  width="1200"
+  width="650"
   height="600"
   frameborder="0"
 ></iframe>
@@ -173,19 +178,30 @@ LeBlanc is, by far and away, the most banned champion of all time. Although thes
 
 Moving onto bivariate analysis, we can take a look at the distribution of gold earned by each role across the dataset. In League of Legends, there are five primary roles that players assume, each with distinct responsibilities and strategic importance:
 
-| Role    | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Top     | The top laner is positioned in the top lane of the map. This player typically uses "tank" champions (characters that can absorb a lot of damage) or "bruisers" (characters that deal and withstand damage), who can initiate fights. They often play champions that excel in split-pushing (applying pressure on the map by attacking enemy structures while the rest of the team is elsewhere).                        |
-| Jungle  | The jungler does not stay in a fixed lane but instead moves around the map, killing neutral monsters for gold and experience. This role is vital for map control, securing objectives like Dragon and Baron (powerful neutral monsters that provide team-wide benefits when defeated), and assisting other lanes by "ganking" (surprising enemy players in their lanes to help secure kills in outnumbered fights).     |
-| Mid     | The mid laner occupies the central lane and is crucial for controlling the map's center. This role usually involves playing "mages" (characters that use magic to deal damage) or "assassins" (characters that can quickly eliminate opponents), champions that deal significant damage and can roam to other lanes to assist teammates in securing kills.                                                              |
-| Bot     | The bottom lane consists of two players: the ADC (Attack Damage Carry, responsible for dealing consistent physical damage, especially in the late game) and the Support (provides utility, vision, and protection for the ADC). The bot lane is a key area for team coordination and strategy.                                                                                                                          |
-| Support | The Support is part of the bottom lane duo and focuses on protecting the ADC. This role involves providing vision control with wards (items that reveal areas of the map), engaging or disengaging fights, and playing champions with crowd control abilities (skills that impair enemy movement or actions) and healing or shielding capabilities. The Support is essential for team fights and overall map awareness. |
+| Role     | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Top Lane | The top laner is positioned in the top lane of the map. This player typically uses "tank" champions (characters that can absorb a lot of damage) or "bruisers" (characters that deal and withstand damage), who can initiate fights. They often play champions that excel in split-pushing (applying pressure on the map by attacking enemy structures while the rest of the team is elsewhere).                        |
+| Jungle   | The jungler does not stay in a fixed lane but instead moves around the map, killing neutral monsters for gold and experience. This role is vital for map control, securing objectives like Dragon and Baron (powerful neutral monsters that provide team-wide benefits when defeated), and assisting other lanes by "ganking" (surprising enemy players in their lanes to help secure kills in outnumbered fights).     |
+| Mid Lane | The mid laner occupies the central lane and is crucial for controlling the map's center. This role usually involves playing "mages" (characters that use magic to deal damage) or "assassins" (characters that can quickly eliminate opponents), champions that deal significant damage and can roam to other lanes to assist teammates in securing kills.                                                              |
+| Bot Lane | The bottom lane consists of two players: the ADC (Attack Damage Carry, responsible for dealing consistent physical damage, especially in the late game) and the Support (provides utility, vision, and protection for the ADC). The bot lane is a key area for team coordination and strategy.                                                                                                                          |
+| Support  | The Support is part of the bottom lane duo and focuses on protecting the ADC. This role involves providing vision control with wards (items that reveal areas of the map), engaging or disengaging fights, and playing champions with crowd control abilities (skills that impair enemy movement or actions) and healing or shielding capabilities. The Support is essential for team fights and overall map awareness. |
 
 We can start with the gold distribution by role. Gold distribution is a key indicator of team resource allocation strategies. Different roles have different gold requirements based on their function within the team composition, and understanding these patterns helps reveal how teams prioritize their resources:
 
 <iframe
-  src="assets/charts/gold-distribution-by-role.html"
-  width="1200"
+src="assets/charts/gold-distribution-by-role.html"
+width="650"
+height="600"
+frameborder="0"
+></iframe>
+
+The boxplot clearly demonstrates the hierarchical nature of gold distribution. Bot lane (ADC) players show both the highest median gold and largest variance, reflecting their role as primary damage dealers who require costly item builds. Mid and top laners show similar distributions, indicating comparable farm priority, while junglers trail behind slightly due to their reliance on "jungle camps" (neutral monsters in the jungle) rather than minion waves (minions that spawn in the lanes, often in higher quantities). Support players, as expected, show significantly lower gold totals, as they are less likely to engage in direct combat and farm less gold overall.
+
+We can also analyze "vision score" across roles, which is a measure of a player's contribution to vision control on the map. League of Legends has a "fog of war" mechanic that obscures the vast majority of the map from view—players need to either be in a position to see the enemy, or have vision-granting items/abilities (such as wards) to see the enemy and gather information:
+
+<iframe
+  src="assets/charts/vision-score-distribution-by-role.html"
+  width="650"
   height="600"
   frameborder="0"
 ></iframe>

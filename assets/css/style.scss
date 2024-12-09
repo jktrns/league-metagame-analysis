@@ -44,6 +44,10 @@ body {
     line-height: 1.5;
 }
 
+iframe {
+    margin: 0 0 20px;
+}
+
 @font-face {
     font-family: 'Beaufort';
     src: url('/assets/fonts/Beaufort-Medium.woff2') format('woff2');
