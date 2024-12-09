@@ -359,7 +359,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th></th>
       <th>gameid</th>
       <th>datacompleteness</th>
-      <th>url</th>
       <th>league</th>
       <th>...</th>
       <th>opp_killsat25</th>
@@ -373,7 +372,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th>0</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>1.0</td>
@@ -385,7 +383,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th>1</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>2.0</td>
@@ -397,7 +394,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th>2</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>1.0</td>
@@ -409,7 +405,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th>3</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>0.0</td>
@@ -421,7 +416,6 @@ Here is the `.head()` of the `teams` DataFrame:
       <th>4</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>0.0</td>
@@ -456,7 +450,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th></th>
       <th>gameid</th>
       <th>datacompleteness</th>
-      <th>url</th>
       <th>league</th>
       <th>...</th>
       <th>red_opp_assistsat25</th>
@@ -470,7 +463,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th>0</th>
       <td>TRLH3/33</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>23.0</td>
@@ -482,7 +474,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th>1</th>
       <td>TRLH3/44</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>16.0</td>
@@ -494,7 +485,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th>2</th>
       <td>TRLH3/76</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>4.0</td>
@@ -506,7 +496,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th>3</th>
       <td>TRLH3/85</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>36.0</td>
@@ -518,7 +507,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
       <th>4</th>
       <td>TRLH3/10072</td>
       <td>complete</td>
-      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
       <td>EU LCS</td>
       <td>...</td>
       <td>0.0</td>
