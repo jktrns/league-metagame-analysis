@@ -141,7 +141,7 @@ Professional League of Legends has a roster of 169 champions (with 168 available
 
 <iframe
   src="assets/charts/top-20-champions.html"
-  width="1200"
+  width="650"
   height="600"
   frameborder="0"
 ></iframe>
