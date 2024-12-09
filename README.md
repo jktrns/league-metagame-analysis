@@ -242,7 +242,7 @@ The following operations were performed to clean the data:
 6. After imputing `pick1` through `pick5`, we create two columns that hold lists for the `picks` and `bans` for each game.
 7. Finally, we create a DataFrame `matches` that consolidates the cleaned data into a single DataFrame where each row represents a single game. We prepend `blue_` and `red_` to columns that are team-specific to distinguish between the two teams' statistics. This allows us to analyze game-level statistics more effectively and ensures that each game's data is self-contained within a single row.
 
-Here is the `.head()` of the `teams` DataFrame:
+Here is the `.head()` of the `teams` DataFrame (with 146 columns):
 
 <div>
 <style scoped>
@@ -330,10 +330,9 @@ Here is the `.head()` of the `teams` DataFrame:
     </tr>
   </tbody>
 </table>
-<p>5 rows × 146 columns</p>
 </div>
 
-Here is the `.head()` of the `teams` DataFrame:
+Here is the `.head()` of the `teams` DataFrame (with 128 columns):
 
 <div>
 <style scoped>
@@ -421,10 +420,9 @@ Here is the `.head()` of the `teams` DataFrame:
     </tr>
   </tbody>
 </table>
-<p>5 rows × 128 columns</p>
 </div>
 
-Finally, here is the `.head()` of the `matches` DataFrame:
+Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
 <div>
 <style scoped>
@@ -512,7 +510,6 @@ Finally, here is the `.head()` of the `matches` DataFrame:
     </tr>
   </tbody>
 </table>
-<p>5 rows × 280 columns</p>
 </div>
 
 ## Assessment of Missingness
