@@ -35,9 +35,213 @@ The dataset is downloaded as a collection of `.csv` files, where each `.csv` rep
 | `champion`   | Champion played by the player                                          |
 | `patch`      | Patch version of the game                                              |
 
+Here are the first 12 rows of the dataset, which represent a single game:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gameid</th>
+      <th>date</th>
+      <th>side</th>
+      <th>position</th>
+      <th>teamname</th>
+      <th>playername</th>
+      <th>champion</th>
+      <th>kills</th>
+      <th>deaths</th>
+      <th>assists</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>top</td>
+      <td>LNG Esports</td>
+      <td>Zika</td>
+      <td>Aatrox</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>jng</td>
+      <td>LNG Esports</td>
+      <td>Weiwei</td>
+      <td>Maokai</td>
+      <td>0</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>mid</td>
+      <td>LNG Esports</td>
+      <td>Scout</td>
+      <td>Orianna</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>bot</td>
+      <td>LNG Esports</td>
+      <td>GALA</td>
+      <td>Kalista</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>sup</td>
+      <td>LNG Esports</td>
+      <td>Mark</td>
+      <td>Senna</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>top</td>
+      <td>Rare Atom</td>
+      <td>Xiaoxu</td>
+      <td>Rumble</td>
+      <td>4</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>jng</td>
+      <td>Rare Atom</td>
+      <td>naiyou</td>
+      <td>Rell</td>
+      <td>1</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>mid</td>
+      <td>Rare Atom</td>
+      <td>VicLa</td>
+      <td>LeBlanc</td>
+      <td>4</td>
+      <td>0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>bot</td>
+      <td>Rare Atom</td>
+      <td>Assum</td>
+      <td>Varus</td>
+      <td>7</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>sup</td>
+      <td>Rare Atom</td>
+      <td>Zorah</td>
+      <td>Renata Glasc</td>
+      <td>0</td>
+      <td>2</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Blue</td>
+      <td>team</td>
+      <td>LNG Esports</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>16</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>10660-10660_game_1</td>
+      <td>2024-01-01 05:13:15</td>
+      <td>Red</td>
+      <td>team</td>
+      <td>Rare Atom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16</td>
+      <td>3</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 We immediately notice the dataset has some glaring issues with mixed granularity and missingness, so we turn to data cleaning before we begin with exploratory data analysis.
 
 ## Data Cleaning and Exploratory Data Analysis
+
+### Data Cleaning
+
+The following steps were taken to clean the data:
+
+1. The data currently has two granularity levels mixed amongst the rows: one pertaining to particular players (e.g. `playername`, `champion`, `kills`, `deaths`, `assists`) and one pertaining to the team in its entirety (e.g. `teamname`, `result`, `firstblood`):
+   
+
+We will need to separate these into three datasets with the following granularity levels:
+    - `players`: A dataset with rows pertaining to individual players
+    - 
 
 ## Assessment of Missingness
 
