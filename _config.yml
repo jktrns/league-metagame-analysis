@@ -3,4 +3,4 @@ plugins:
 - jekyll-remote-theme
 show_downloads: false
 title: "A Quantification of Metagame Shifts in Professional League of Legends Gameplay"
-description: "Predicting patch versions from team compositions in 10 years of professional play."
+description: "Predicting game patch versions from draft picks and team compositions from 10 years of professional play"
