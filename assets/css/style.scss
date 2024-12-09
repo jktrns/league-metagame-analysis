@@ -18,13 +18,13 @@ code {
 
 h1,h2,h3,h4,h5,h6 {
     color: rgb(240, 230, 210);
-    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-weight: 700;
 }
 
 h3 {
     color: rgb(200, 155, 60);
-    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-weight: 600;
 }
 
@@ -32,9 +32,13 @@ a {
     color: rgb(200, 155, 60);
 }
 
+code {
+    color: #C8AA6E !important;
+}
+
 body {
-    background-color: #010B13;
-    color: rgb(160, 155, 140);
+    background-color: #010B13 !important;
+    color: rgb(240, 230, 210);
     font-family: 14px/1.5 "Spiegel Sans", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
