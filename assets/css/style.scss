@@ -11,3 +11,108 @@ code {
     padding: 0;
     margin: 0;
 }
+
+:root {
+    color-scheme: dark;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: rgb(240, 230, 210);
+    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    color: rgb(200, 155, 60);
+    font-family: 'Beaufort', 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+a {
+    color: rgb(200, 155, 60);
+}
+
+body {
+    background-color: #010B13;
+    color: rgb(160, 155, 140);
+    font-family: 14px/1.5 "Spiegel Sans", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-5Regular_TRIAL.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-5RegularItalic_TRIAL.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-6SemiBold_TRIAL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-6SemiBoldItalic_TRIAL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-7Bold_TRIAL.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-7BoldItalic_TRIAL.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-8ExtraBold_TRIAL.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel Sans';
+    src: url('/assets/fonts/SpiegelSans-8ExtraBoldItalic_TRIAL.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Beaufort';
+    src: url('/assets/fonts/Beaufort-Medium.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Beaufort';
+    src: url('/assets/fonts/Beaufort-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
