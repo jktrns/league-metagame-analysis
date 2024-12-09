@@ -24,16 +24,19 @@ Understanding and predicting metagame shifts is crucial because it directly impa
 
 The dataset is downloaded as a collection of `.csv` files, where each `.csv` represents one year of match data. The data covers matches from 2014 up to present day (the 2024 set updates incrementally on a daily basis). Combining all of these `.csv` files into a single dataset yields a total of 994056 rows and 168 columns. Some relevant columns include:
 
-| Column Name  | Description                                                            |
-| ------------ | ---------------------------------------------------------------------- |
-| `gameid`     | Unique identifier for each game                                        |
-| `date`       | Date when the game was played                                          |
-| `side`       | The side (blue or red) the player/team was on                          |
-| `position`   | The role/position of the player (e.g., top, jungle, mid, bot, support) |
-| `teamname`   | Name of the team                                                       |
-| `playername` | Name of the player                                                     |
-| `champion`   | Champion played by the player                                          |
-| `patch`      | Patch version of the game                                              |
+| Column Name        | Description                                                                                                                                                                   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `gameid`           | A unique identifier for each game. Formatting is inconsistent across leagues.                                                                                                 |
+| `datacompleteness` | Whether the data is complete, partial, or contains errors.                                                                                                                    |
+| `date`             | ISO-formatted date when the game was played.                                                                                                                                   |
+| `side`             | The side (blue or red) the player/team was on.                                                                                                                                |
+| `position`         | The role/position of the player. One of "top", "jng", "mid", "bot", "sup", or "team" (for team-level stats).                                                                  |
+| `teamname`         | The name of the team.                                                                                                                                                         |
+| `playername`       | The name of the player.                                                                                                                                                       |
+| `champion`         | The champion played by the player.                                                                                                                                            |
+| `patch`            | The patch version of the game.                                                                                                                                                |
+| `pick1` - `pick5`  | The order of champions picked by the team in the draft phase. Many older games did not record this information.                                                               |
+| `ban1` - `ban5`    | The order of champions banned by the team in the draft phase. Older games have a 3-ban system, while more recent games have a 5-ban system. Some games have no bans recorded. |
 
 Here are the first 12 rows of the dataset, which represent a single game:
 
@@ -50,6 +53,7 @@ Here are the first 12 rows of the dataset, which represent a single game:
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -195,14 +199,337 @@ We immediately notice the dataset has some glaring issues with mixed granularity
 
 ### Data Cleaning
 
-The following steps were taken to clean the data:
+Notice that the dataset's structure captures both macro-level game dynamics and individual player performance metrics. Each row represents a player's performance in a single game, with 10 rows per match (one for each player), plus two additional rows for team-level statistics. We will need to separate these into three datasets with the following granularity levels:
 
-1. The data currently has two granularity levels mixed amongst the rows: one pertaining to particular players (e.g. `playername`, `champion`, `kills`, `deaths`, `assists`) and one pertaining to the team in its entirety (e.g. `teamname`, `result`, `firstblood`):
-   
+- `players`: A dataset where one row represents a single player's performance in a single game
+- `teams`: A dataset where one row represents a single team's performance in a single game
+- `games`: A dataset where one row represents a single game's overall statistics
 
-We will need to separate these into three datasets with the following granularity levels:
-    - `players`: A dataset with rows pertaining to individual players
-    - 
+The following operations were performed to clean the data:
+
+1. We first split the dataset into `players` and `teams` DataFrames based on the `position` column.
+2. We then removed all columns that were empty for all rows in both DataFrames, effectively removing columns that only pertain to one granularity level but not the other.
+3. We then deal with miscellaneous cleaning, such as fixing the `dtype` of certain boolean columns alongside converting the `date` column to a `datetime` object. For the `patch` column, we pad it with zeroes to ensure sorting is consistent, and engineer a new column `major_patch` to represent the major patch version (e.g. `14.22` -> `14.X`).
+4. There is a `datacompleteness` column that has three categories: "complete", "partial", and "error". The "error" category is likely due to a data collection error, so we will drop all rows with this category.
+5. We also notice that a lot of the values for columns `pick1` through `pick5` are co-missing (about 24% of all rows had missing picks). In professional play, there is a "draft phase" in which the ban and pick order is actually ordinal, and alternates between the two teams with the following system:
+   ![Draft Phase](https://miro.medium.com/v2/resize:fit:1386/0*YpA5_-Ti7zvcsFdd.jpg)
+   The issue is that this dataset covers games from a time before this system was implemented, and as such we have many rows where the `pick1`, `pick2`, etc. columns are all missing even though their respective `champion` entries in the `players` DataFrame are not. We can't simply use the `champion` column entries as a fallback either, because the order of champions in the `champion` column is hardcoded as their role in the game: (1) top laner, (2) jungler, (3) middle laner, (4) bottom laner, and (5) support.
+
+   To impute these missing values, what we can do is calculate the "presence" of the champion across a particular timeframe surrounding that match (in this case, we will choose the patch number), which is calculated as:
+
+   $$
+   \text{presence} = \frac{\text{number of games where champion was picked/banned}}{\text{number of games that patch was played}}
+   $$
+
+   For example, here is the presence rate of the top 10 champions in the 14.22 patch:
+
+   | Champion  | Presence |
+   |-----------|----------|
+   | Corki     | 1.00     |
+   | Aurora    | 1.00     |
+   | Skarner   | 1.00     |
+   | Ashe      | 0.94     |
+   | K'Sante   | 0.88     |
+   | Yone      | 0.71     |
+   | Vi        | 0.65     |
+   | Orianna   | 0.65     |
+   | Varus     | 0.59     |
+   | Jax       | 0.59     |
+
+   We can then use this presence rate to determine the pick order of the champions. This is imperfect, but it should provide a good enough approximation for our purposes. One issue is that there are also games where the patch number is missing; however, we can intuit that the patch number is the same as the games surrounding it (since the data is sorted chronologically), so we can simply forward fill the missing patch numbers.
+6. After imputing `pick1` through `pick5`, we create two columns that hold lists for the `picks` and `bans` for each game.
+7. Finally, we create a DataFrame `matches` that consolidates the cleaned data into a single DataFrame where each row represents a single game. We prepend `blue_` and `red_` to columns that are team-specific to distinguish between the two teams' statistics. This allows us to analyze game-level statistics more effectively and ensures that each game's data is self-contained within a single row.
+
+Here is the `.head()` of the `teams` DataFrame:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gameid</th>
+      <th>datacompleteness</th>
+      <th>url</th>
+      <th>league</th>
+      <th>...</th>
+      <th>opp_deathsat25</th>
+      <th>major_patch</th>
+      <th>picks</th>
+      <th>bans</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>03.X</td>
+      <td>[Annie, Vi, Jinx, Trundle, Orianna]</td>
+      <td>[Riven, Kha'Zix, Yasuo]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>03.X</td>
+      <td>[Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo]</td>
+      <td>[Kassadin, Nidalee, Elise]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRLH3/44</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>03.X</td>
+      <td>[Elise, Lucian, Lulu, Shyvana, Kayle]</td>
+      <td>[Lee Sin, Annie, Yasuo]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRLH3/44</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>03.X</td>
+      <td>[Thresh, Renekton, Caitlyn, Gragas, Vi]</td>
+      <td>[Kassadin, Kha'Zix, Ziggs]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRLH3/76</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>03.X</td>
+      <td>[Thresh, Gragas, Lee Sin, Shyvana, Vayne]</td>
+      <td>[Kassadin, Annie, Orianna]</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 146 columns</p>
+</div>
+
+Here is the `.head()` of the `teams` DataFrame:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gameid</th>
+      <th>datacompleteness</th>
+      <th>url</th>
+      <th>league</th>
+      <th>...</th>
+      <th>opp_killsat25</th>
+      <th>opp_assistsat25</th>
+      <th>opp_deathsat25</th>
+      <th>major_patch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>03.X</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>03.X</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>03.X</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>03.X</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>03.X</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 128 columns</p>
+</div>
+
+Finally, here is the `.head()` of the `matches` DataFrame:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gameid</th>
+      <th>datacompleteness</th>
+      <th>url</th>
+      <th>league</th>
+      <th>...</th>
+      <th>red_opp_assistsat25</th>
+      <th>red_opp_deathsat25</th>
+      <th>red_picks</th>
+      <th>red_bans</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRLH3/33</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>23.0</td>
+      <td>4.0</td>
+      <td>[Thresh, LeBlanc, Lucian, Shyvana, Dr. Mundo]</td>
+      <td>[Kassadin, Nidalee, Elise]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRLH3/44</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>16.0</td>
+      <td>6.0</td>
+      <td>[Thresh, Renekton, Caitlyn, Gragas, Vi]</td>
+      <td>[Kassadin, Kha'Zix, Ziggs]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRLH3/76</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>[Renekton, Vi, Leona, Ziggs, Jinx]</td>
+      <td>[Yasuo, Elise, LeBlanc]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRLH3/85</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>36.0</td>
+      <td>6.0</td>
+      <td>[Lucian, Lulu, Shyvana, Olaf, Zyra]</td>
+      <td>[Dr. Mundo, Yasuo, Kassadin]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRLH3/10072</td>
+      <td>complete</td>
+      <td>http://matchhistory.na.leagueoflegends.com/en/...</td>
+      <td>EU LCS</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>[Annie, Renekton, LeBlanc, Vi, Ezreal]</td>
+      <td>[Evelynn, Elise, Dr. Mundo]</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 280 columns</p>
+</div>
 
 ## Assessment of Missingness
 
