@@ -139,6 +139,13 @@ Finally, here is the `.head()` of the `matches` DataFrame (with 280 columns):
 
 Professional League of Legends has a roster of 169 champions (with 168 available in professional play) as of November 2024, but only a subset are considered viable in professional play during any given meta. Although a bivariate analysis is more appropriate to explore meta shifts over time (putting the `major_patch` column into the x-axis), we can still get a sense of the most "reliable" champions by looking at the top 20 most picked champions across the entire dataset. I'll color the bars by role for additional context, although this is a univariate analysis and thus it cannot be used to draw any conclusions:
 
+<iframe
+  src="assets/charts/top-20-champions.html"
+  width="1200"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ## Assessment of Missingness
 
 ## Hypothesis Testing
