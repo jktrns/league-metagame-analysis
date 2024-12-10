@@ -2,7 +2,7 @@
 
 ### Game Overview
 
-[League of Legends](https://www.leagueoflegends.com) (commonly abbreviated as LoL) is a [multiplayer online battle arena](https://en.wikipedia.org/wiki/Multiplayer_online_battle_arena) (MOBA) game developed and published by [Riot Games](https://riotgames.com). Released in 2009, it has become one of the most popular games in the e-sports scene, attracting tens of millions of players worldwide and maintaining a strong competitive presence. In LoL, 5 players assume the role of a "champion" with unique abilities and battle against a team of 5 other players. The game is played in matches that typically last between 20 to 50 minutes, where the primary objective is to power up your champion through strategic gameplay, acquiring items and abilities to ultimately destroy the opposing team's "Nexus," a critical structure located within their base. The game is known for its strategic depth, requiring teamwork, quick decision-making, and adaptability to the evolving in-game situations.
+[League of Legends](https://www.leagueoflegends.com) (which we'll abbreviate as LoL for brevity) is a [multiplayer online battle arena](https://en.wikipedia.org/wiki/Multiplayer_online_battle_arena) (MOBA) game developed and published by [Riot Games](https://riotgames.com). Released in 2009, it has become one of the most popular games in the e-sports scene, attracting tens of millions of players worldwide and maintaining a strong competitive presence. In LoL, 5 players assume the role of a "champion" with unique abilities and battle against a team of 5 other players. The game's primary objective is to power up your champion through strategic gameplay, acquiring items and abilities to ultimately destroy the opposing team's "Nexus," a critical structure located within the enemy team's base. The game is known for its extremely high prerequisite knowledge requirement and skill ceiling, partially due to its maturity in the gaming industry.
 
 ### Data Overview
 
@@ -319,7 +319,7 @@ Looking through these columns, each are most likely an result of changes to eith
 
 However, since the overwhelming majority of columns fall into the positive realm of disparity scores (meaning that the column is more likely to be missing in partial data), we can safely say that the `datacompleteness` indicator is a reliable proxy for missingness.
 
-Moving onto missingness dependency analysis itself, we can reason that whether the data is complete is dependent on the `'league'` column—this is because different leagues most likely have different practices for storing and transmitting historical match data. Below, the `DataFrame` `completeness_percentages` shows leagues that have some incomplete data (we're filtering out leagues with 100% completeness):
+Moving onto missingness dependency analysis itself, we can reason that whether the data is complete is dependent on the `league` column—this is because different leagues most likely have different practices for storing and transmitting historical match data. Below, the `DataFrame` `completeness_percentages` shows leagues that have some incomplete data (we're filtering out leagues with 100% completeness):
 
 | League | Complete Data % | Partial Data % |
 | ------ | --------------- | -------------- |
@@ -362,7 +362,7 @@ Performing the permutation test, we get the following results:
 
 We have an observed TVD $= 0.9061$ and $p = 0.0010$. Assuming a significance level of 0.05, we can reject the null hypothesis—this suggests that the missingness of data is dependent on the league.
 
-Moving on, we can perform a similar analysis on the `'side'` column. We have the null and alternative hypotheses:
+Moving on, we can perform a similar analysis on the `side` column. We have the null and alternative hypotheses:
 
 - Null hypothesis: The distribution of data completeness (complete vs. partial) is the same for both blue and red sides, meaning any observed differences in completeness rates between sides are due to random chance.
 - Alternative hypothesis: The distribution of data completeness differs between blue and red sides, suggesting that one side systematically has different rates of complete vs. partial data collection.
