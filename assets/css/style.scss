@@ -62,3 +62,21 @@ iframe {
     font-weight: 700;
     font-display: swap;
 }
+
+.overflow table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+blockquote {
+    border-left: 3px solid #C8AA6E;
+}
+
+section #title p {
+    color: rgb(160, 155, 140) !important;
+    font-size: 16px !important;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    text-wrap: balance;
+}

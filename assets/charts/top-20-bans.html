@@ -1,100 +1,98 @@
 <html>
-<head><meta charset="utf-8" />
-    <style>
-        @font-face {
-            font-family: 'Beaufort';
-            src: url('/assets/fonts/Beaufort-Medium.woff2') format('woff2');
-            font-weight: 600;
-            font-display: swap;
-        }
-        
-        
-        @font-face {
-            font-family: 'Beaufort';
-            src: url('/assets/fonts/Beaufort-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansLight';
-            src: url("../fonts/OpenSans-Light-webfont.eot");
-            src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Light-webfont.woff") format("woff"),url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Light-webfont.svg#OpenSansLight") format("svg");
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansLightItalic';
-            src: url("../fonts/OpenSans-LightItalic-webfont.eot");
-            src: url("../fonts/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-LightItalic-webfont.woff") format("woff"),url("../fonts/OpenSans-LightItalic-webfont.ttf") format("truetype"),url("../fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic") format("svg");
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansRegular';
-            src: url("../fonts/OpenSans-Regular-webfont.eot");
-            src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Regular-webfont.woff") format("woff"),url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansItalic';
-            src: url("../fonts/OpenSans-Italic-webfont.eot");
-            src: url("../fonts/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Italic-webfont.woff") format("woff"),url("../fonts/OpenSans-Italic-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Italic-webfont.svg#OpenSansItalic") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansSemibold';
-            src: url("../fonts/OpenSans-Semibold-webfont.eot");
-            src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Semibold-webfont.woff") format("woff"),url("../fonts/OpenSans-Semibold-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansSemiboldItalic';
-            src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot");
-            src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-SemiboldItalic-webfont.woff") format("woff"),url("../fonts/OpenSans-SemiboldItalic-webfont.ttf") format("truetype"),url("../fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansBold';
-            src: url("../fonts/OpenSans-Bold-webfont.eot");
-            src: url("../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Bold-webfont.woff") format("woff"),url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Bold-webfont.svg#OpenSansBold") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @font-face {
-            font-family: 'OpenSansBoldItalic';
-            src: url("../fonts/OpenSans-BoldItalic-webfont.eot");
-            src: url("../fonts/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-BoldItalic-webfont.woff") format("woff"),url("../fonts/OpenSans-BoldItalic-webfont.ttf") format("truetype"),url("../fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic") format("svg");
-            font-weight: normal;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-        }
+<head><meta charset="utf-8" /><style>
+    @font-face {
+        font-family: 'Beaufort';
+        src: url('/assets/fonts/Beaufort-Medium.woff2') format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: #010B13;
-        }
-        </style>
-</head>
+
+    @font-face {
+        font-family: 'Beaufort';
+        src: url('/assets/fonts/Beaufort-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'OpenSansLight';
+        src: url("../fonts/OpenSans-Light-webfont.eot");
+        src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Light-webfont.svg#OpenSansLight") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'OpenSansLightItalic';
+        src: url("../fonts/OpenSans-LightItalic-webfont.eot");
+        src: url("../fonts/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'OpenSansRegular';
+        src: url("../fonts/OpenSans-Regular-webfont.eot");
+        src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'OpenSansItalic';
+        src: url("../fonts/OpenSans-Italic-webfont.eot");
+        src: url("../fonts/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Italic-webfont.woff") format("woff"), url("../fonts/OpenSans-Italic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Italic-webfont.svg#OpenSansItalic") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'OpenSansSemibold';
+        src: url("../fonts/OpenSans-Semibold-webfont.eot");
+        src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold-webfont.woff") format("woff"), url("../fonts/OpenSans-Semibold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'OpenSansSemiboldItalic';
+        src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot");
+        src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-SemiboldItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-SemiboldItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'OpenSansBold';
+        src: url("../fonts/OpenSans-Bold-webfont.eot");
+        src: url("../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Bold-webfont.svg#OpenSansBold") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'OpenSansBoldItalic';
+        src: url("../fonts/OpenSans-BoldItalic-webfont.eot");
+        src: url("../fonts/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #010B13;
+    }
+</style></head>
 <body>
     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="7a9e5525-4fb8-4e27-81ae-97e310c0dd3b" class="plotly-graph-div" style="height:600px; width:650px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7a9e5525-4fb8-4e27-81ae-97e310c0dd3b")) {                    Plotly.newPlot(                        "7a9e5525-4fb8-4e27-81ae-97e310c0dd3b",                        [{"alignmentgroup":"True","hovertemplate":"Champion=%{x}\u003cbr\u003eNumber of Bans=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":["#64B5F6","#FFB74D","#FFB74D","#E57373","#BA68C8","#E57373","#E57373","#FFB74D","#64B5F6","#BA68C8","#64B5F6","#64B5F6","#64B5F6","#81C784","#64B5F6","#BA68C8","#E57373","#81C784","#FFB74D","#64B5F6"],"pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["LeBlanc","Lucian","Kalista","Camille","Thresh","Renekton","Jayce","Varus","Syndra","Karma","Akali","Ryze","Azir","Olaf","Taliyah","Nautilus","Rumble","Sejuani","Ashe","Zoe"],"xaxis":"x","y":[20246,15126,14895,14014,13743,13637,13025,12757,12135,11676,11403,11295,11270,10621,10201,9983,9943,9866,9777,9750],"yaxis":"y","type":"bar"},{"marker":{"color":"#E57373"},"name":"Top Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#81C784"},"name":"Jungle","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#64B5F6"},"name":"Mid Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#FFB74D"},"name":"Bot Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#BA68C8"},"name":"Support","showlegend":true,"x":[null],"y":[null],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#f2f5fa"},"error_y":{"color":"#f2f5fa"},"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"baxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"line":{"color":"#283442"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"marker":{"line":{"color":"#283442"}},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#506784"},"line":{"color":"rgb(17,17,17)"}},"header":{"fill":{"color":"#2a3f5f"},"line":{"color":"rgb(17,17,17)"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#f2f5fa","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#f2f5fa"},"geo":{"bgcolor":"rgb(17,17,17)","lakecolor":"rgb(17,17,17)","landcolor":"rgb(17,17,17)","showlakes":true,"showland":true,"subunitcolor":"#506784"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"dark"},"paper_bgcolor":"rgb(17,17,17)","plot_bgcolor":"rgb(17,17,17)","polar":{"angularaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","radialaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"yaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"zaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"}},"shapedefaults":{"line":{"color":"#f2f5fa"}},"sliderdefaults":{"bgcolor":"#C8D4E3","bordercolor":"rgb(17,17,17)","borderwidth":1,"tickwidth":0},"ternary":{"aaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"baxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","caxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"title":{"x":0.05},"updatemenudefaults":{"bgcolor":"#506784","borderwidth":0},"xaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Champion","font":{"family":"OpenSansRegular"}},"tickfont":{"family":"OpenSansRegular"},"tickangle":45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Bans","font":{"family":"OpenSansRegular"}},"tickfont":{"family":"OpenSansRegular"},"range":[0,null]},"legend":{"tracegroupgap":0,"title":{"text":"Typical Role"},"yanchor":"top","y":0.99,"xanchor":"right","x":0.99,"bgcolor":"rgba(10,20,40,0.8)","bordercolor":"#f0e6d2"},"title":{"text":"Top 20 Most Banned Champions","font":{"family":"Beaufort"},"y":0.95},"barmode":"relative","height":600,"width":650,"font":{"family":"OpenSansRegular","color":"#f0e6d2"},"margin":{"b":100},"paper_bgcolor":"#0A1428","plot_bgcolor":"#0A1428","showlegend":true},                        {"responsive": true}                    )                };                            </script>        </div>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="53e1bad9-0d06-4140-95a7-b1f455fa7247" class="plotly-graph-div" style="height:600px; width:650px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("53e1bad9-0d06-4140-95a7-b1f455fa7247")) {                    Plotly.newPlot(                        "53e1bad9-0d06-4140-95a7-b1f455fa7247",                        [{"alignmentgroup":"True","hovertemplate":"Champion=%{x}\u003cbr\u003eNumber of Bans=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":["#64B5F6","#FFB74D","#FFB74D","#E57373","#BA68C8","#E57373","#E57373","#FFB74D","#64B5F6","#BA68C8","#64B5F6","#64B5F6","#64B5F6","#81C784","#64B5F6","#BA68C8","#E57373","#81C784","#FFB74D","#64B5F6"],"pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["LeBlanc","Lucian","Kalista","Camille","Thresh","Renekton","Jayce","Varus","Syndra","Karma","Akali","Ryze","Azir","Olaf","Taliyah","Nautilus","Rumble","Sejuani","Ashe","Zoe"],"xaxis":"x","y":[20234,15124,14894,14011,13735,13627,13024,12753,12130,11659,11388,11293,11270,10620,10201,9978,9943,9865,9777,9747],"yaxis":"y","type":"bar"},{"marker":{"color":"#E57373"},"name":"Top Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#81C784"},"name":"Jungle","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#64B5F6"},"name":"Mid Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#FFB74D"},"name":"Bot Lane","showlegend":true,"x":[null],"y":[null],"type":"bar"},{"marker":{"color":"#BA68C8"},"name":"Support","showlegend":true,"x":[null],"y":[null],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#f2f5fa"},"error_y":{"color":"#f2f5fa"},"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"baxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"line":{"color":"#283442"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"marker":{"line":{"color":"#283442"}},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#506784"},"line":{"color":"rgb(17,17,17)"}},"header":{"fill":{"color":"#2a3f5f"},"line":{"color":"rgb(17,17,17)"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#f2f5fa","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#f2f5fa"},"geo":{"bgcolor":"rgb(17,17,17)","lakecolor":"rgb(17,17,17)","landcolor":"rgb(17,17,17)","showlakes":true,"showland":true,"subunitcolor":"#506784"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"dark"},"paper_bgcolor":"rgb(17,17,17)","plot_bgcolor":"rgb(17,17,17)","polar":{"angularaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","radialaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"yaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"zaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"}},"shapedefaults":{"line":{"color":"#f2f5fa"}},"sliderdefaults":{"bgcolor":"#C8D4E3","bordercolor":"rgb(17,17,17)","borderwidth":1,"tickwidth":0},"ternary":{"aaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"baxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","caxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"title":{"x":0.05},"updatemenudefaults":{"bgcolor":"#506784","borderwidth":0},"xaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Champion","font":{"family":"OpenSansRegular"}},"tickfont":{"family":"OpenSansRegular"},"tickangle":45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Bans","font":{"family":"OpenSansRegular"}},"tickfont":{"family":"OpenSansRegular"},"range":[0,null]},"legend":{"tracegroupgap":0,"title":{"text":"Typical Role"},"yanchor":"top","y":0.99,"xanchor":"right","x":0.99,"bgcolor":"rgba(10,20,40,0.8)","bordercolor":"#f0e6d2"},"title":{"text":"Top 20 Most Banned Champions","font":{"family":"Beaufort"},"y":0.95},"barmode":"relative","height":600,"width":650,"font":{"family":"OpenSansRegular","color":"#f0e6d2"},"margin":{"b":100},"paper_bgcolor":"#0A1428","plot_bgcolor":"#0A1428","showlegend":true},                        {"responsive": true}                    )                };                            </script>        </div>
 </body>
 </html>
