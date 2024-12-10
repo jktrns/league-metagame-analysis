@@ -26,7 +26,7 @@ Understanding and predicting metagame shifts is crucial because it directly impa
 
 ### Data
 
-The dataset is downloaded as a collection of `.csv` files, where each `.csv` represents one year of match data. The data covers matches from 2014 up to present day (the 2024 set updates incrementally on a daily basis). Combining all of these `.csv` files into a single dataset yields a total of 994056 rows and 168 columns. Some relevant columns include:
+The dataset is downloaded as a collection of `.csv` files, where each `.csv` represents one year of match data from professional LoL games. The data covers matches from 2014 up to present day (the 2024 set updates incrementally on a daily basis). Combining all of these `.csv` files into a single dataset yields a total of 994056 rows and 168 columns. Some relevant columns include:
 
 | Column Name        | Description                                                                                                                                                                   |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -503,12 +503,16 @@ The hyperparameters for our `RandomForestClassifier` were tuned through manual e
 
 The final model achieves the following performance, relative to the baseline model:
 
+<div class="overflow" markdown="1">
+
 | Metric           | Old Model |        | New Model |        | Improvement |        |
 | ---------------- | --------- | ------ | --------- | ------ | ----------- | ------ |
 |                  | Train     | Test   | Train     | Test   | Train       | Test   |
 | Accuracy         | 82.43%    | 68.01% | 82.74%    | 68.76% | 0.31%       | 0.75%  |
 | Major Patch Acc. | 98.10%    | 96.59% | 98.21%    | 96.97% | 0.10%       | 0.38%  |
 | MAE (patches)    | 1.0207    | 1.8295 | 0.9559    | 1.6002 | 0.0648      | 0.2293 |
+
+</div>
 
 As we can see, although the difference in improvement for accuracy and major patch accuracy is extremely small, the new model has improved MAE (as in if we're wrong, we're off by about 0.256 less patch steps on average). We can look at the $n$-step accuracy of the new model compared to the old model:
 

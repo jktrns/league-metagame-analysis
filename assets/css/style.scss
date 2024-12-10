@@ -46,6 +46,11 @@ body {
 
 iframe {
     margin: 0 0 20px;
+    max-width: 100%;
+}
+
+.MathJax_Display {
+    max-width: 100%;
 }
 
 @font-face {
